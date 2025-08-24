@@ -19,7 +19,7 @@ export default [
     poder_especial: "Perseverança e bondade",
     animal_companheiro: "Jaq e Gus (camundongos)",
     descricao: "Princesa que superou adversidades com ajuda de sua Fada Madrinha.",
-    ativa: true,
+    ativa: false,
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export default [
     poder_especial: "Canto encantador",
     animal_companheiro: "Fauna florestal",
     descricao: "Princesa amaldiçoada a dormir por 100 anos.",
-    ativa: true,
+    ativa: false,
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ export default [
     poder_especial: "Inteligência e compaixão",
     animal_companheiro: "Fera/Príncipe Adam",
     descricao: "Jovem inteligente que vê além das aparências.",
-    ativa: true,
+    ativa: false,
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ export default [
     poder_especial: "Liderança e coragem",
     animal_companheiro: "Rajah (tigre)",
     descricao: "Princesa independente que luta por liberdade e justiça.",
-    ativa: true,
+    ativa: false,
   },
   {
     id: 7,
@@ -74,7 +74,7 @@ export default [
     poder_especial: "Conexão com a natureza",
     animal_companheiro: "Meeko (guaxinim)",
     descricao: "Nativa americana corajosa que uniu dois mundos.",
-    ativa: true,
+    ativa: false,
   },
   {
     id: 8,
@@ -85,7 +85,7 @@ export default [
     poder_especial: "Estratégia militar e coragem",
     animal_companheiro: "Mushu (dragão)",
     descricao: "Guerreira que se disfarçou de homem para salvar seu pai.",
-    ativa: true,
+    ativa: false,
   },
   {
     id: 9,
@@ -96,7 +96,7 @@ export default [
     poder_especial: "Determinação e culinária",
     animal_companheiro: "Louis (jacaré)",
     descricao: "Princesa trabalhadora que realizou seu sonho de ter um restaurante.",
-    ativa: true,
+    ativa: false,
   },
   {
     id: 10,
@@ -107,6 +107,6 @@ export default [
     poder_especial: "Cabelo mágico curador",
     animal_companheiro: "Pascal (camaleão)",
     descricao: "Princesa de cabelos dourados com poderes curativos.",
-    ativa: true,
+    ativa: false,
   },
 ];

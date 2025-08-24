@@ -32,7 +32,7 @@ res.status(200).json(princesa);
 
 //Se não existir, enviar uma resposta e o status 404
 res.status(404).json({
-mensagem: "Princesa não encontrada!"
+mensagem: `Princesa com o id: ${id} não encontrada!`
     }) 
   }
 });
@@ -68,9 +68,20 @@ app.get("/princesas/reino/:reino", (req, res) => {
     res.status(200).json(reinoPrincesas)
   } else {
     res.status(404).json({
-    mensagem: `Princesa(as) do reino ${reino} não encontrada(as).`
+    mensagem: `Princesa do reino ${reino} não encontrada.`
     })
   }
+});
+
+app.get("/princesas/ativas/sim", (req, res) => {
+  const princesasAtivas = princesas.filter(p => p.ativa === true);
+  if (princesasAtivas) {
+  res.status(200).json(princesasAtivas)
+} else {
+  res.status(404).json({
+  mensagem: "Não existem princesas ativas"
+  });
+}
 });
 
 app.listen(serverPort, () => {
