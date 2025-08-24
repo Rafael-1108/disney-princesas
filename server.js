@@ -15,15 +15,15 @@ app.get("/princesas", (req, res) => {
 });
 
 app.get("/princesas/id/:id", (req, res) => {
-    let id = req.params.id;
+  let id = req.params.id;
 
 //Transformando id (string) em numero;
 id = parseInt(id)
 
-// Buscar no array/objeto/json
+//Buscar pelo id desejado no array/objeto/json
 const princesa = princesas.find(p => p.id === id);
 
-// Verificar se existe
+//Verificar se a princesa existe
 if (princesa) {
 
 //Se existir enviar na resposta com o res e o status 200
@@ -38,9 +38,12 @@ mensagem: "Princesa não encontrada!"
 });
 
 app.get("/princesas/nome/:nome", (req, res) => {
-    const nome = req.params.nome.toLowerCase();
 
-// Buscar no array/objeto/json
+// Obtém o parâmetro 'nome' da URL e o converte para letras minúsculas. 
+const nome = req.params.nome.toLowerCase();
+
+//Buscar pelo nome no array/objeto/json. Percorre cada item do array o array (princesas.find) 
+//e pega o nome de uma princesa específica e o converte para letras minúsculas (p.nome.toLowerCase()). 
 const nomePrincesa = princesas.find(p => p.nome.toLowerCase() === nome);
 
 // Verificar se existe
@@ -52,11 +55,24 @@ res.status(200).json(nomePrincesa);
 
 //Se não existir, enviar uma resposta e o status 404
 res.status(404).json({
-mensagem: "Princesa não encontrada!"
+mensagem: `Princesa com o nome ${nome} não encontrada!`
     }) 
+  }
+});
+
+app.get("/princesas/reino/:reino", (req, res) => {
+  const reino = req.params.reino.toLowerCase();
+  const reinoPrincesas = princesas.find(r => r.reino.toLowerCase() === reino);
+
+  if (reinoPrincesas) {
+    res.status(200).json(reinoPrincesas)
+  } else {
+    res.status(404).json({
+    mensagem: `Princesa(as) do reino ${reino} não encontrada(as).`
+    })
   }
 });
 
 app.listen(serverPort, () => {
     console.log(`http://localhost:${serverPort}`)
-})
+});
